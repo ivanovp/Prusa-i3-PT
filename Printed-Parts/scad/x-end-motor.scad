@@ -7,9 +7,19 @@
 
 use <x-end.scad>
 
+shift = 20;
+
 module x_end_motor_base(){
  x_end_base();
- translate(v=[-15,31,26.5]) cube(size = [17,44,53], center = true);
+ translate(v=[-15,31,26.5]) cube(size = [17,44+shift * 2,53], center = true);
+ translate([-8,-35,33]) 
+    difference() 
+    {
+        cube(size = [3,14,40], center = true);
+        translate([0, -7, -20]) rotate([45, 0, 0]) cube(size = [4,20,20], center = true);
+        translate([-5, -4, 16]) rotate([0,90,0]) cylinder(d=3,h=10, $fn=20);
+        translate([-5, -4, -3]) rotate([0,90,0]) cylinder(d=3,h=10, $fn=20);
+    }
 }
 
 module x_end_motor_endstop_base(){
@@ -37,15 +47,15 @@ module x_end_motor_endstop_holes(){
 module x_end_motor_holes(){
  x_end_holes();
  // Position to place
- translate(v=[-1,32,30.25]){
+ translate(v=[-1,shift+32,30.25]){
   // Belt hole
-  translate(v=[-14,1,0]) cube(size = [10,46,22], center = true);
+  translate(v=[-14,1,0]) cube(size = [10,46+shift * 2,22], center = true);
   // Motor mounting holes
   translate(v=[20,-15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=1.8, $fn=30);
   translate(v=[1,-15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 10, r=3.1, $fn=30);
   translate(v=[20,-15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=1.8, $fn=30);
   translate(v=[1,-15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 10, r=3.1, $fn=30);
-   translate(v=[20,15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=1.8, $fn=30);
+  translate(v=[20,15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=1.8, $fn=30);
   translate(v=[1,15.5,-15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 10, r=3.1, $fn=30);
   translate(v=[20,15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=1.8, $fn=30);
   translate(v=[1,15.5,15.5]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 10, r=3.1, $fn=30);
@@ -62,7 +72,7 @@ module x_end_motor_holes(){
 
 // Motor shaft cutout
 module x_end_motor_shaft_cutout(){
-    union(){
+    translate([0, shift, 0]) union(){
     difference(){
         translate(v=[0,32,30]) rotate(a=[0,-90,0]) rotate(a=[0,0,90]) cylinder(h = 70, r=17, $fn=6);
        

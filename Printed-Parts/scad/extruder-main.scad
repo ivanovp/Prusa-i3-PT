@@ -303,8 +303,10 @@ translate([21,-21,0]){
     // Bottom
     translate([35/2,9.8,15]) rotate([-90,0,0]) cylinder(r=8.13, h=3.7, $fn=120);
     // Main body
-    translate([35/2,13,15]) rotate([-90,0,0]) cylinder(r=11.53, h=33.001, $fn=80);
-     
+    // original
+    //translate([35/2,13,15]) rotate([-90,0,0]) cylinder(r=11.53, h=33.001, $fn=80);
+    // Peter Ivanov: my Chinese E3D-v5 clone has 25 mm diameter
+    translate([35/2,13,15]) rotate([-90,0,0]) cylinder(d=25.06, h=33.001, $fn=80);    
      }
      
 module extruder_nozzle_cooling(){
