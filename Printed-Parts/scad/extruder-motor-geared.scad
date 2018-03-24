@@ -71,6 +71,7 @@ difference()
     }
     // to be sure that motor's space is reserved
     translate([tx, ty, cutout_height]) rotate([0, 0, rot]) cube([42,42+2,height - cutout_height]);
+    translate([0, 0, cutout_height + (height - cutout_height) / 2]) rotate([0, 0, 45]) cube([7,7,height - cutout_height], center=true);
     translate([-30,-42,0]) cube([51,cutout_width,height]);
     
     translate([0,-21-cutout_width/2,cutout_height]) cube([42,cutout_width,height - cutout_height]);
