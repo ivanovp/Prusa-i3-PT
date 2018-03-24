@@ -252,8 +252,8 @@ difference(){
     // Carriage mount left
     translate([35/2+12+11,6.5-2,6.2])cylinder(r=1.7, h=20.8-0.2, $fn=30);    // Screw hole
     translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r=3.2, h=6, $fn=6);  // Nut trap    
-     translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r2=3.2, r1=4, h=3, $fn=6);  // Nut trap  
-     translate([35/2+12+11,6.5-2,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
+    translate([35/2+12+11,6.5-2,-0.01])rotate([0,0,-15])cylinder(r2=3.2, r1=4, h=3, $fn=6);  // Nut trap  
+    translate([35/2+12+11,6.5-2,27])cylinder(r=3.1, h=5, $fn=30); // Head cut
     
     // Fan nozzle mount hole
     translate([5,61-5,20])cylinder(r=3/2, h=12, $fn=30);
@@ -269,7 +269,7 @@ difference(){
 
 
     // Motor mount holes
-translate([21,-21,0]){
+#translate([21,-21,0]){
             // Top right
             translate([-15.5,-15.5,4]) cylinder(r=1.65, h=50, $fn=30);  // Screw hole
             translate([-15.5,-15.5,-1]) cylinder(r=3.1, h=4.5, $fn=30); // Head cut
