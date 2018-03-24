@@ -28,14 +28,9 @@ module motor_holder()
         union()
         {
             cube([42,42+2,height]);
-            triangle_points =[[20,0],[30,-27],[42,0]];
-            triangle_paths =[[0,1,2]];
+            triangle_points =[[42,0], [0,0], [0, -8], [15, -8], [30,-27]];
+            triangle_paths =[[0, 1, 2, 3, 4]];
             linear_extrude(height=height) polygon(triangle_points,triangle_paths,10);
-            /*intersection()
-            {
-                translate([21,0,0]) cylinder(r=21,height, $fn=30);
-                translate([21,-21,0]) cube([21,21,height]);
-            }*/
         }
 
         translate([0,-50,cutout_height]) cube([42,42+2+50,height - cutout_height]);
@@ -63,18 +58,19 @@ module motor_holder()
     }
 }
 
+tx = -5.5;
+ty = -23;
+rot = 75;
+
 difference()
 {
     union()
     {
-        difference()
-        {
-            translate([0,-42,0]) cube([42,42,height]);
-            translate([0,-19.5,0]) cube([3,7,height]);
-        }
-        translate([2, -23, 0]) rotate([0, 0, 75]) motor_holder();
-        //translate([3, -23, 0]) rotate([0, 0, 75]) motor_holder();
+        translate([0,-42,0]) cube([42,42,height]);
+        translate([tx, ty, 0]) rotate([0, 0, rot]) motor_holder();
     }
+    // to be sure that motor's space is reserved
+    translate([tx, ty, cutout_height]) rotate([0, 0, rot]) cube([42,42+2,height - cutout_height]);
     translate([-30,-42,0]) cube([51,cutout_width,height]);
     
     translate([0,-21-cutout_width/2,cutout_height]) cube([42,cutout_width,height - cutout_height]);
