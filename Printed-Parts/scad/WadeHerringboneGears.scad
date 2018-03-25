@@ -30,7 +30,7 @@ printing = 1;
  * Copy this from your extruders' information.
  * Usually either 39.4555mm or 41.7055mm (excluding gear tolerance)
  */
-distance_between_axles = 50.0;
+distance_between_axles = 49.0;
 //distance_between_axles = 39.4555;
 //distance_between_axles = 41.7055;
 
@@ -138,7 +138,7 @@ gear2_middle_rounding = 3;
  * mind tolerance
  * (a tolerance of 0.35mm worked fine in my case)
  */
-gear2_nut_diameter = 14 + 0.35;
+gear2_nut_diameter = 13 + 0.35;
 
 /* Depth that the nut should be sunk inside the holder */
 gear2_nut_sunk = 6.5;
