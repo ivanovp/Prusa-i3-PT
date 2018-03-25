@@ -77,8 +77,8 @@ difference()
     translate([0,-21-cutout_width/2,cutout_height]) cube([42,cutout_width,height - cutout_height]);
     translate([21-cutout_width/2,-42,cutout_height]) cube([cutout_width,42,height - cutout_height]);
     //base round cutout
-    translate([21,-21,-2]) cylinder(r=10.5, h=33, $fn=200);
-    translate([21,-21,-2]) cylinder(r=11, h=7, $fn=200);
+    translate([21,-21,-2]) cylinder(r=9, h=33, $fn=200);
+    translate([21,-21,2.5]) cylinder(r=11, h=7, $fn=200);
     
     translate([21,-21,0]) screws();
 }
