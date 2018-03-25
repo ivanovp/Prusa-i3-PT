@@ -37,14 +37,14 @@ module motor_holder()
         translate([0,-42,-1]) cube([22,22,height + 2]);
         
         // motor's shaft
-        translate([21,21+3,-2])   cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21+2.5,-2]) cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21+2,-2])   cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21+1.5,-2]) cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21+1,-2])   cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21+0.5,-2]) cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21,-2])     cylinder(r=11.5, h=33, $fn=200);
-        translate([21,21-0.5,-2]) cylinder(r=11.5, h=33, $fn=200);
+        translate([21,21+3,-2])   cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21+2.5,-2]) cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21+2,-2])   cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21+1.5,-2]) cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21+1,-2])   cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21+0.5,-2]) cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21,-2])     cylinder(r=12.5, h=33, $fn=200);
+        translate([21,21-0.5,-2]) cylinder(r=12.5, h=33, $fn=200);
         
         // stepper motor's screws
         translate([21,21+3,0])   screws();
