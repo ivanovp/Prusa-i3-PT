@@ -1,6 +1,6 @@
 height = 8;
 cutout_width = 20;
-cutout_height = 5;
+cutout_height = 5.5;
 
 module screws()
 {
@@ -25,14 +25,15 @@ difference()
 {
     translate([0,-42,0]) cube([42,42,height]);
     translate([0, 0, height / 2]) rotate([0, 0, 45]) cube([7,7,height], center=true);
-    translate([21,-42,0]) cube([51,cutout_width,height]);
+    translate([21,-20,0]) cube([51,cutout_width,height]);
+    //translate([-30,-42,0]) cube([51,cutout_width,height]);
     
     translate([0,-21-cutout_width/2,cutout_height]) cube([42,cutout_width,height - cutout_height]);
     translate([21-cutout_width/2,-42,cutout_height]) cube([cutout_width,42,height - cutout_height]);
     
     //base round cutout
     translate([21,-21,-2]) cylinder(r=9, h=33, $fn=200);
-    translate([21,-21,3]) cylinder(r=11, h=7, $fn=200);
+    translate([21,-21,4.5]) cylinder(r=11, h=7, $fn=200);
     
     translate([21,-21,0]) screws();
 }
